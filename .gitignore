@@ -1,0 +1,24 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+**/.DS_Store
+**/.DS_Store
+
+# Virtual environments
+.venv
+
+output/
+png/
+kindle_screenshots/
+backup/
+
+_ignore/
+
+#
+uv.lock
+pdm.lock
