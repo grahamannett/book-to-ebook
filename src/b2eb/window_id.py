@@ -100,6 +100,10 @@ instead of using a LaunchDaemon or LaunchAgent.""")
         current_window_title = window.get(kCGWindowName, "")
         bounds = CG.CGRectMakeWithDictionaryRepresentation(window[kCGWindowBounds], None)[1]
 
+        if bounds.size.height == 0 or bounds.size.width == 0:
+            print(f"Skipping window with zero size: {window=}")
+            continue
+
         if current_app == requested_app:
             app_found = True
 

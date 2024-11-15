@@ -11,6 +11,33 @@ from typing import Optional
 
 from .constants import output_dir
 
+"""
+Get window Id original project:
+
+https://github.com/smokris/GetWindowID
+
+
+This is possible in python only with something like (i was just trying to do it as quickly as possible last night when i strung everything together):
+
+`uv run --with pyobjc python`
+
+from Quartz import CGWindowListCopyWindowInfo, kCGWindowListExcludeDesktopElements, kCGNullWindowID
+from Quartz import CGRectMakeWithDictionaryRepresentation
+from AppKit import NSAccessibilityEnabled, AXUIElementCreateApplication, kAXWindowsAttribute
+from AppKit import kAXPositionAttribute, kAXSizeAttribute, kAXTitleAttribute
+from CoreFoundation import CFDictionaryGetValue
+
+windows = CGWindowListCopyWindowInfo(kCGWindowListExcludeDesktopElements, kCGNullWindowID)
+
+then all the windows will have
+
+window["kCGWindowOwnerName"]
+and
+kCGWindowNumber (or something similar)
+
+
+"""
+
 
 @dataclass
 class KindleConfig:
